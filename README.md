@@ -76,8 +76,8 @@ There's also a couple of convenience functions:
 
 And you probably want to take that buffer and store it somewhere so you don't have to recreate it everytime you need it:
 
-  $myApp->set("some/awesome/key.bin", $a->buffer);
-  $a = new TypedArray($myApp->get("some/awesome/key.bin"));
+    $myApp->set("some/awesome/key.bin", $a->buffer);
+    $a = new TypedArray($myApp->get("some/awesome/key.bin"));
 
 
 Caveats
@@ -85,7 +85,7 @@ Caveats
 * You can hurt yourself with this class. 
 * Don't mix different types of TypedArrays or planes will fall out of the sky. 
 * There is currently no support for named / ordered keys. I will probably never support named keys but I would like to support numeric keys that are preserved after sorting.
-* if you're loading up a lot of data at once you should probably pack() it yourself and pass it to the constructor. The array accessor stuff in PHP is pretty slow when you're hitting them hard.
+* if you're loading up a lot of data at once you should probably pack() it yourself and pass it to the constructor. The array accessor stuff in PHP is pretty slow when you're hitting it hard.
 
 TODO
 ----
