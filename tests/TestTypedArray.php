@@ -128,3 +128,4 @@ try{
   $exceptionThrown = true;
 }
 assert(test('$exceptionThrown == true', $desc));
+print "[OK] all tests passed\n";

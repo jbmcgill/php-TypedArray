@@ -22,6 +22,7 @@ class TypedArray implements ArrayAccess, Iterator{
   private $index = 0;
   private $type = "L";
   private $typeSize = 4;
+  public function getType(){ return $this->type;}
   public function __construct($a=null, $type="L"){
     $this->type = $type;
     switch( $type ){
@@ -82,7 +83,7 @@ class TypedArray implements ArrayAccess, Iterator{
   }
   public function merge($a){
     if( $a instanceOf TypedArray ){
-      if( $a->type != $this->type ) throw new TypedArrayNotSupportedException("merging different types not supported");
+      if( $a->getType() != $this->type ) throw new TypedArrayNotSupportedException("merging different types not supported");
       $this->buffer .= $a->buffer;
     }else if( is_array($a) ){
       $size = count($a);
